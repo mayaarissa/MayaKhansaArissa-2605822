@@ -4,13 +4,21 @@
 
 username = "dasproRPL"
 password = "RPLfire!123"
+MAKS_PERCOBAAN = 3
 
-while True:
-    input_username = input("Masukkan username: ")
+percobaan = 0
+
+while percobaan < MAKS_PERCOBAAN:
+    input_username = input("Masukkan username: ").strip()
     input_password = input("Masukkan password: ")
 
     if input_username == username and input_password == password:
         print("Login berhasil!")
         break
     else:
-        print("Username atau password salah. Silakan coba lagi.")
+        percobaan += 1
+        sisa = MAKS_PERCOBAAN - percobaan
+        if sisa > 0:
+            print(f"Username atau password salah. Sisa kesempatan: {sisa}")
+        else:
+            print("Username atau password salah. Akun terkunci, silakan coba lagi nanti.")
